@@ -19,13 +19,12 @@ from django.urls import path, include
 # for api view with drf_spectacular :https://drf-spectacular.readthedocs.io/en/latest/readme.html#take-it-for-a-spin
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(), name='swagger-ui'),
     path('api/schema/redoc/', SpectacularRedocView.as_view(), name='redoc'),
-    path('server/', include('server.urls')),
-    path('account/', include('account.urls')),
+    path('', include('server.urls')),
+    # path('account/', include('account.urls')),
 
-]
+] 

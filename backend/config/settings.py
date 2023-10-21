@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #external
+    'rest_framework',
     'drf_spectacular',
     #internal
     'server.apps.ServerConfig',
@@ -133,6 +134,9 @@ AUTH_USER_MODEL = "account.Account"
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.SessionAuthentication'
+    ]
 }
 #for custom drf
 SPECTACULAR_SETTINGS = {
