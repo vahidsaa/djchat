@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,3 +149,7 @@ SPECTACULAR_SETTINGS = {
 
 #Generate your schema with the CLI: https://drf-spectacular.readthedocs.io/en/latest/readme.html#take-it-for-a-spin
 # code : py manage.py spectacular --color --file schema.yml
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "media/"
