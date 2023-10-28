@@ -78,7 +78,7 @@ class Channel(models.Model):
     #copy def save and signal for delete (category model) 
     
     def save(self, *args, **kwargs):
-        if self.id: # thats mean we have a image befor
+        if self.id: # thats mean we have a user befor
             existing = get_object_or_404(Category, id=self.id)
             if existing.icon != self.icon:
                 existing.icon.delete(save=False)
